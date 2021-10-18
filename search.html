@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        nav{
+            width: 100%;
+            height: 80px;
+            display: flex;
+        }
+        .logo{
+            height: 100%;
+            width: 30%;
+            margin-left: 20px;
+        }
+        .logo img{
+            height: 100%;
+        }
+        .search{
+            width: 70%;
+            height: 100%;
+        }
+        input{
+            width: 500px;
+            height: 60%;
+            margin-top: 2%;
+            border: none;
+            border-bottom: 2px solid black;
+            font-size: 23px;
+        }
+        input:focus{
+            outline: none;
+            border-bottom: 2px solid black;
+        }
+        #result{
+            position: absolute;
+            width: 500px;
+            height: 200px;
+            background-color: white;
+            z-index: 100;
+            border: 1px solid green;
+            overflow-y: scroll;
+            display: none;
+        }
+        #result >div{
+          width: 100%;
+          height: 70px;
+          margin-bottom: 5px;
+          border: 1px solid black;
+          display: flex;
+        }
+        #result >div:hover{
+            cursor: pointer;
+        }
+        #result >div>div:nth-child(1){
+            width: 20%;
+            height: 100%;
+            /* border: 1px solid red; */
+            margin-right: 10%;
+        }
+        #result >div>div:nth-child(2){
+            width: 70%;
+            height: 100%;
+        }
+        #cont{
+            width: 90%;
+            height: 95vh;
+            margin: auto;
+            display: none;
+        }
+        #img{
+            width: 50%;
+        }
+        .text{
+            width: 50%;
+            padding: 20px;
+        }
+        .text > div{
+            width: 100%;
+            height: 200px;
+            margin: 10px auto;
+            border: 1px solid gray;
+        }
+        h2{
+            margin-bottom: 20px;
+        }
+        button{
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><img src="./21601.png" alt=""></div>
+        <div class="search">
+            <input id="inp" placeholder="Search" type="text">
+            <div id="result">
+
+            </div>
+        </div>
+    </nav>
+    <div id="cont">
+        <div id="img"></div>
+        <div class="text">
+            <h2 id="title"></h2>
+             <h4 id="aurthor"></h4>
+             <div><p id="desc"></p></div>
+             <button id="next">Read More</button>
+        </div>
+    </div>
+</body>
+<script src="./search.js"></script>
+</html>
